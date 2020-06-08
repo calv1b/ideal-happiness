@@ -97,6 +97,10 @@ class ViewController: UIViewController {
         self.blueSlider.value = Float(self.game.currentBValue)
         self.updateView()
     })
+        
+        alert.addAction(action)
+           
+           present(alert, animated: true, completion: nil)
     }
   
   @IBAction func startOver() {
