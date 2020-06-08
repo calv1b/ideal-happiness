@@ -50,10 +50,10 @@ struct RGB {
     let bDiff = Double(b - target.b)
     return sqrt((rDiff * rDiff + gDiff * gDiff + bDiff * bDiff)/3) / 255.0  } */
     
-    func differenceX(target: BullsEyeGame) -> Double {
-        let redDiff = Double(game.targetRValue - target.currentRValue)
-        let greenDiff = Double(game.targetGValue - target.currentGValue)
-        let blueDiff = Double(game.targetBValue - target.currentBValue)
+    func differenceX() -> Double {
+        let redDiff = Double(game.targetRValue - BullsEyeGame().currentRValue)
+        let greenDiff = Double(game.targetGValue - BullsEyeGame().currentGValue)
+        let blueDiff = Double(game.targetBValue - BullsEyeGame().currentBValue)
         return sqrt((redDiff * redDiff + greenDiff * greenDiff + blueDiff * blueDiff)/3) / 255.0 }
     
     

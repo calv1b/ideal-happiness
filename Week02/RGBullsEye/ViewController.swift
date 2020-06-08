@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     @IBAction func showAlert(Sender: AnyObject) {
     var points = 0
     game.score += points
-        let difference = RGB.differenceX(target.r)
+        let difference = RGB().differenceX()
     
     let title: String
         if difference == 0 {
