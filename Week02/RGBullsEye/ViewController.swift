@@ -67,18 +67,22 @@ class ViewController: UIViewController {
     @IBAction func showAlert(Sender: AnyObject) {
     var points = 0
         let difference = RGB().differenceX()
-        points += Int(difference) * 100
     let title: String
         if difference == 0.0 {
       title = "Perfect!"
+      points += Int(difference) * 100
       points += 100
         } else if difference < 0.25 {
       title = "Close. Target Values Needed: \(game.targetRValue) \(game.targetGValue) \(game.targetBValue)"
+      points += Int(difference) * 100
+      points += 50
         } else if difference < 0.50 {
       title = "Little cold. Target Values Needed: \(game.targetRValue) \(game.targetGValue) \(game.targetBValue)"
+        points += Int(difference) * 100
         points += 25
         } else {
       title = "Rerouting to nearest optometrist"
+        points += Int(difference) * 100
     }
     
     let message = "You scored \(points) points"
