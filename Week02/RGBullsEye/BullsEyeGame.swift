@@ -43,6 +43,7 @@ struct BullsEyeGame {  // might be class?
            currentGValue = 127
            currentBValue = 127
             
+            
         }
         
     }

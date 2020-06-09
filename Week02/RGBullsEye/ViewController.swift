@@ -66,21 +66,21 @@ class ViewController: UIViewController {
   
     @IBAction func showAlert(Sender: AnyObject) {
     var points = 0
-    game.score += points
         let difference = RGB().differenceX()
-    
+        points += Int(difference) * 100
     let title: String
-        if difference == 0 {
+        if difference == 0.0 {
       title = "Perfect!"
       points += 100
-    } else if difference < 5 {
+        } else if difference < 0.25 {
       title = "You almost had it!"
       if difference == 1 {
         points += 50
       }
-    } else if difference < 10 {
+        } else if difference < 0.50 {
       title = "Pretty good!"
-    } else {
+        points += 25
+        } else {
       title = "Not even close..."
     }
     
@@ -90,6 +90,7 @@ class ViewController: UIViewController {
     
     let action = UIAlertAction(title: "OK", style: .default, handler: {
       action in
+        self.game.score += points
         self.game.startNewRound()
         self.targetLabel.backgroundColor = UIColor(red: CGFloat(self.game.targetRValue)/255, green: CGFloat(self.game.targetGValue)/255, blue: CGFloat(self.game.targetBValue)/255, alpha: 1.0)
         self.redSlider.value = Float(self.game.currentRValue)
@@ -125,7 +126,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    game.startNewRound()
+    startOver()
     let roundedRValue = redSlider.value.rounded()
     let roundedGValue = greenSlider.value.rounded()
     let roundedBValue = blueSlider.value.rounded()
