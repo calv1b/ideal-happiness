@@ -73,15 +73,12 @@ class ViewController: UIViewController {
       title = "Perfect!"
       points += 100
         } else if difference < 0.25 {
-      title = "You almost had it!"
-      if difference == 1 {
-        points += 50
-      }
+      title = "Close. Target Values Needed: \(game.targetRValue) \(game.targetGValue) \(game.targetBValue)"
         } else if difference < 0.50 {
-      title = "Pretty good!"
+      title = "Close. Target Values Needed: \(game.targetRValue) \(game.targetGValue) \(game.targetBValue)"
         points += 25
         } else {
-      title = "Not even close..."
+      title = "Rerouting to nearest optomostrist"
     }
     
     let message = "You scored \(points) points"
