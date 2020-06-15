@@ -58,10 +58,12 @@ class HomeViewController: UIViewController{
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    registerForTheme()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
+    unregisterForTheme()
   }
 
   func setupViews() {
@@ -109,7 +111,13 @@ class HomeViewController: UIViewController{
     view3TextLabel.text = reducedCoins
   }
   
-  @IBAction func switchPressed(_ sender: Any) {
+  @IBAction func switchPressed(_ sender: UISwitch) {
+    if sender.isOn {
+      ThemeManager.shared.currentTheme = LightTheme()
+    } else {
+      ThemeManager.shared.currentTheme = DarkTheme()
+    }
+    themeChanged()
   }
 }
 
@@ -124,6 +132,23 @@ extension HomeViewController {
   }
   
   @objc func themeChanged() {
-    view1.backgroundColor = ThemeManager.shared.currentTheme as? UIColor
+    
+    headingLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    
+    view.backgroundColor = ThemeManager.shared.currentTheme?.backgroundColor
+    
+    view1.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+    view1.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    
+    view2.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+    view2.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    
+    view3.backgroundColor = ThemeManager.shared.currentTheme?.widgetBackgroundColor
+    view3.layer.borderColor = ThemeManager.shared.currentTheme?.borderColor.cgColor
+    
+    view1TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    view2TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    view3TextLabel.textColor = ThemeManager.shared.currentTheme?.textColor
+    
   }
 }

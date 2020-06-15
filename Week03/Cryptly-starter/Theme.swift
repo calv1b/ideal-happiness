@@ -46,9 +46,9 @@ protocol Theme {
 class LightTheme: Theme {
   
   var backgroundColor: UIColor = .white
-  var textColor: UIColor = .white
-  var borderColor: UIColor = .gray
-  var widgetBackgroundColor: UIColor = .lightGray
+  var textColor: UIColor = .black
+  var borderColor: UIColor = .lightGray
+  var widgetBackgroundColor: UIColor = .systemGray6
   
 }
 

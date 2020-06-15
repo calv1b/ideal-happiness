@@ -34,11 +34,9 @@ import UIKit
 
 class ThemeManager {
     static let shared = ThemeManager()
-    
     public var currentTheme: Theme? {
         didSet {
             NotificationCenter.default.post(name: Notification.Name.init("themeChanged"), object: nil)
-          
         } 
     }
     
@@ -46,6 +44,7 @@ class ThemeManager {
     
     public func set(theme: Theme) {
       self.currentTheme = LightTheme()
+      
       
     }
 }
