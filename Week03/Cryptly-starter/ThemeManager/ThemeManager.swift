@@ -43,7 +43,7 @@ class ThemeManager {
     private init() {}
     
     public func set(theme: Theme) {
-      self.currentTheme = LightTheme()
+      self.currentTheme = theme
       
       
     }

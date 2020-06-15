@@ -53,6 +53,7 @@ class HomeViewController: UIViewController{
     setView1Data()
     setView2Data()
     setView3Data()
+
     
   }
   
@@ -117,7 +118,6 @@ class HomeViewController: UIViewController{
     } else {
       ThemeManager.shared.currentTheme = DarkTheme()
     }
-    themeChanged()
   }
 }
 
