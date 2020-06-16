@@ -101,15 +101,15 @@ class HomeViewController: UIViewController{
   }
   
   func setView1Data() {
-    view1TextLabel.text = listedCoins
+    view1TextLabel.text = String(listedCoins!.dropLast(2))
   }
   
   func setView2Data() {
-    view2TextLabel.text = improvedCoins
+    view2TextLabel.text = String(improvedCoins!.dropLast(2))
   }
   
   func setView3Data() {
-    view3TextLabel.text = reducedCoins
+    view3TextLabel.text = String(reducedCoins!.dropLast(2))
   }
   
   @IBAction func switchPressed(_ sender: UISwitch) {

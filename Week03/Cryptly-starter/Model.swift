@@ -51,6 +51,7 @@ let listedCoins = allCoins?.reduce(""){$0 + $1.name +  ", "}
 let improvedCoins = allCoins?.filter { $0.currentValue > $0.previousValue}
   .reduce(""){$0 + $1.name + ", "}
 
+
 let reducedCoins = allCoins?.filter { coins in
   coins.currentValue < coins.previousValue
   }.reduce(""){$0 + $1.name + ", "}
